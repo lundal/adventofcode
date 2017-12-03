@@ -20,3 +20,18 @@ add a b =
             b
     in
         ( ax + bx, ay + by )
+
+
+isBetween : Coord -> Coord -> Coord -> Bool
+isBetween a b coord =
+    let
+        ( ax, ay ) =
+            a
+
+        ( bx, by ) =
+            b
+
+        ( cx, cy ) =
+            coord
+    in
+        cx >= (min ax bx) && cx <= (max ax bx) && cy >= (min ay by) && cy <= (max ay by)
