@@ -1,4 +1,4 @@
-module Day02 exposing (main)
+module Day04 exposing (main)
 
 import Answer
 import List.Extra

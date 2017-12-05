@@ -1,4 +1,4 @@
-module Day02 exposing (main)
+module Day05 exposing (main)
 
 import Answer
 import Array exposing (Array)
