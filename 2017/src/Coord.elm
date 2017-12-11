@@ -10,6 +10,18 @@ origin =
     ( 0, 0 )
 
 
+add : Coord -> Coord -> Coord
+add a b =
+    let
+        ( ax, ay ) =
+            a
+
+        ( bx, by ) =
+            b
+    in
+        ( ax + bx, ay + by )
+
+
 nextInSpiral : Coord -> Coord
 nextInSpiral coord =
     let
