@@ -1,9 +1,9 @@
-module Day10 exposing (main)
+module Day10 exposing (main, knotHash)
 
 import Answer
 import Bitwise
 import Char
-import Hex
+import Encoding
 import List.Extra
 
 
@@ -75,6 +75,15 @@ densify sparse =
         |> List.map (\l -> List.foldl Bitwise.xor 0 l)
 
 
+knotHash encoder input =
+    input
+        |> parseLengths
+        |> hash 64 256
+        |> densify
+        |> List.map encoder
+        |> String.concat
+
+
 
 -- Main
 
@@ -95,12 +104,7 @@ part1 =
 
 
 part2 =
-    input2
-        |> parseLengths
-        |> hash 64 256
-        |> densify
-        |> List.map Hex.fromIntMax256
-        |> String.concat
+    knotHash Encoding.intToHex input2
 
 
 main =
